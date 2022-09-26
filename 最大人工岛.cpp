@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // 简单的 只要对每个岛进行标记 然后遍历看看连接了哪些岛就行
     void DFS(vector<vector<int>>& grid, int x, int y, int idx, unordered_map<int, int>& cnt, int n) {
         cnt[idx]++;
         grid[x][y] = idx;
