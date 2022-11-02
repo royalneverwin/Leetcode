@@ -1,0 +1,16 @@
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        res = [[1]]
+        idx = 2
+        while idx <= numRows:
+            if idx == 2:
+                res.append([1,1])
+            else:
+                new = [1]
+                for i in range(idx-2):
+                    new.append(res[-1][i]+res[-1][i+1])
+                new.append(1)
+                res.append(new)
+            idx += 1
+
+        return res
